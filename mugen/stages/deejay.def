@@ -1,0 +1,241 @@
+; Stage informations :
+; -----------------
+; From the game: 	Street Fighter Alpha 3
+; Name:			Deejay's Stage (???)
+; Version:		0.1
+
+; Rip Informations :	
+; ----------------
+; by:			Dark Saviour
+; from:			ePSXe 1.6.0
+; with:			MCM 1.5, sffextract & sprmaker
+; date:			01/02/2006
+
+; Contacts :
+; --------
+; email: 		darksaviour77@hotmail.com
+; site:			http://www.ds-arena.fr.st
+
+; Please don't link these files ;)
+
+;--------------------------------------------------------
+[Info]
+name = "(SFA3) Deejay's Stage"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -224
+boundright = 224
+boundhigh = 0
+boundlow = 0
+verticalfollow = 0
+floortension = 0
+tension = 60
+
+;--------------------------------------------------------
+[PlayerInfo]
+p1startx = -80
+p1starty = 0
+p1startz = 0
+p1facing = 1
+p2startx = 80
+p2starty = 0
+p2startz = 0
+p2facing = -1
+leftbound  = -1000
+rightbound = 1000
+topbound = 0
+botbound = 0
+
+;--------------------------------------------------------
+[Scaling]
+topz     = 0       
+botz     = 50      
+topscale = 1       
+botscale = 1.2     
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 25
+screenright = 25
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 216
+autoturn = 1
+resetBG = 0
+
+;--------------------------------------------------------
+[Shadow]
+color = 
+yscale = 0.15
+;reflect = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = sound/sfa3-deejay.mp3
+bgvolume = 255
+
+;--------------------------------------------------------
+[BGdef]
+spr = deejay.sff
+debugbg = 0
+
+;--------------------------------------------------------
+;--------------------------------------------------------
+[BG 0]
+type = normal 
+spriteno = 0, 0
+start = 0, 0
+delta = .571428, 1
+
+[BG 1]
+type = anim
+actionno = 1
+start = 0, 0
+delta = .571428, 1
+
+[Begin Action 1]
+1,0, 0,0, 7
+1,1, 0,0, 7
+1,2, 0,0, 7
+1,3, 0,0, 7
+1,4, 0,0, 7
+1,3, 0,0, 7
+1,2, 0,0, 7
+1,1, 0,0, 7
+
+[BG 2]
+type = normal 
+spriteno = 2, 0
+start = 0, 0
+delta = .678571, 1
+mask = 1
+
+[BG 3]
+type = normal
+spriteno = 3,0
+start = 0, 0
+delta = .785714, 1
+mask = 1
+
+[BG 4]
+type = anim
+actionno = 4
+start = 0, 0
+delta = .892857, 1
+
+[Begin Action 4]
+4,0, 0,0, 9
+4,1, 0,0, 9
+4,2, 0,0, 9
+4,3, 0,0, 9
+4,4, 0,0, 9
+
+[BG 5]
+type = normal
+spriteno = 5,0
+start = 0, 0
+delta = 1, 1
+mask = 1
+
+[BG 6]
+type = anim
+actionno = 6
+start = 0, 0
+delta = 1, 1
+
+[Begin Action 6]
+6,0, 0,0, 5
+6,1, 0,0, 5
+6,0, 0,0, 5
+6,1, 0,0, 5
+6,0, 0,0, 5
+6,1, 0,0, 5
+6,0, 0,0, 5
+6,1, 0,0, 5
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 3
+6,1, 0,0, 3
+6,0, 0,0, 3
+6,1, 0,0, 3
+6,2, 0,0, 3
+6,1, 0,0, 3
+6,0, 0,0, 3
+6,1, 0,0, 3
+6,2, 0,0, 3
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+6,2, 0,0, 4
+6,1, 0,0, 4
+
+[BG 7]
+type = anim
+actionno = 7
+start = 0, 0
+delta = 1, 1
+
+[Begin Action 7]
+7,0, 0,0, 8
+7,1, 0,0, 8
+7,2, 0,0, 8
+7,3, 0,0, 8
+7,4, 0,0, 8
+7,3, 0,0, 8
+7,2, 0,0, 8
+7,1, 0,0, 8
+
+[BG 8]
+type = anim
+actionno = 8
+start = 0, 0
+delta = 1, 1
+
+[Begin Action 8]
+8,0, 0,0, 8
+8,1, 0,0, 8
+8,2, 0,0, 8
+8,3, 0,0, 8
+
+[BG 9]
+type = anim
+actionno = 9
+start = 0, 0
+delta = 1, 1
+
+[Begin Action 9]
+9,0, 0,0, 9
+9,1, 0,0, 9
+9,2, 0,0, 9
+
+[BG 10]
+type = anim
+actionno = 10
+start = 0, 0
+delta = 1, 1
+
+[Begin Action 10]
+10,0, 0,0, 8
+10,1, 0,0, 8
+10,2, 0,0, 8
+10,3, 0,0, 8
+10,4, 0,0, 8
+10,5, 0,0, 8
+10,6, 0,0, 8
+10,7, 0,0, 8

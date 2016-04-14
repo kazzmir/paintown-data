@@ -1,0 +1,28 @@
+(projectile
+  (anim
+    (name main)
+    (type attack)
+    (basedir players/terry/haddoken/)
+    (delay 6)
+    (attack
+      (x1 20)
+      (y1 15)
+      (x2 80)
+      (y2 50)
+      (damage 8))
+    (frame terry-fireball01.png)
+    (frame terry-fireball02.png)
+    (frame terry-fireball03.png)
+    (frame terry-fireball04.png))
+
+  (anim
+    (name death)
+    (basedir players/terry/haddoken/)
+    (delay 6)
+    (frame terry-fbdeath01.png)
+    (frame terry-fbdeath02.png)
+    (frame terry-fbdeath03.png)
+    (frame terry-fbdeath04.png)
+    (frame terry-fbdeath05.png)
+    (frame terry-fbdeath06.png))
+  )

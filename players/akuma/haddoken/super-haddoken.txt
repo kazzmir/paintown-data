@@ -1,0 +1,32 @@
+(projectile
+ (anim
+   (name main)
+   (type attack)
+   (basedir players/akuma/haddoken/fireball/)
+   (delay 5)
+   (attack
+     (x1 75)
+     (y1 180)
+     (x2 160)
+     (y2 235)
+     (damage 17))
+   (frame 19134.png)
+   (frame 19136.png)
+   (frame 19138.png)
+   (frame 19140.png)
+   (frame 19142.png)
+   (frame 19144.png)
+   (frame 19146.png)
+   (frame 19148.png))
+
+ (anim
+   (name death)
+   (basedir players/akuma/haddoken/fireball-death/)
+   (delay 5)
+   (frame 19150.png)
+   (frame 19151.png)
+   (frame 19152.png)
+   (frame 19153.png)
+   (frame 19154.png)
+   (frame 19155.png))
+  )

@@ -1,0 +1,19 @@
+# Hit flash/flash
+
+(effect
+ (anim 
+  (loop 0)
+  (delay 3)
+  # (offset 36 51)
+  (basedir misc/flash/)
+  (frame flash000.png)
+  (frame flash001.png)
+  (frame flash002.png)
+  (frame flash003.png)
+  (frame flash004.png)
+  (frame flash005.png)
+  (frame flash006.png)
+  (frame flash007.png)
+  (frame flash008.png)
+  (frame flash009.png)
+  (frame flash010.png)))

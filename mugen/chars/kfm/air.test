@@ -1,0 +1,482 @@
+
+---------------------------------------------------------
+Defaults
+---------------------------------------------------------
+command.time,15
+command.buffer.time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,TripleKFPalm
+command,~D, DF, F, D, DF, F, x
+time,20
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,TripleKFPalm
+command,~D, DF, F, D, DF, F, y
+time,20
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,SmashKFUpper
+command,~D, DB, B, D, DB, B, x
+time,20
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,SmashKFUpper
+command,~D, DB, B, D, DB, B, y
+time,20
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,upper_x
+command,~F, D, DF, x
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,upper_y
+command,~F, D, DF, y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,upper_xy
+command,~F, D, DF, x+y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCF_x
+command,~D, DF, F, x
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCF_y
+command,~D, DF, F, y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCF_xy
+command,~D, DF, F, x+y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCB_x
+command,~D, DB, B, x
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCB_y
+command,~D, DB, B, y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,QCB_xy
+command,~D, DB, B, x+y
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,FF_ab
+command,F, F, a+b
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,FF_a
+command,F, F, a
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,FF_b
+command,F, F, b
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,FF
+command,F, F
+time,10
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,BB
+command,B, B
+time,10
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,recovery
+command,x+y
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,down_a
+command,/$D,a
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,down_b
+command,/$D,b
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,a
+command,a
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,b
+command,b
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,c
+command,c
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,x
+command,x
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,y
+command,y
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,z
+command,z
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,start
+command,s
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,holdfwd
+command,/$F
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,holdback
+command,/$B
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,holdup
+command,/$U
+time,1
+---------------------------------------------------------
+Command
+---------------------------------------------------------
+name,holddown
+command,/$D
+time,1
+---------------------------------------------------------
+State -1, Smash Kung Fu Upper
+---------------------------------------------------------
+type,ChangeState
+value,3050
+triggerall,command = SmashKFUpper
+triggerall,power >= 1000
+triggerall,statetype != A
+trigger1,ctrl
+trigger2,hitdefattr = SC, NA, SA, HA
+trigger2,stateno != [3050,3100)
+trigger2,movecontact
+---------------------------------------------------------
+State -1, Triple Kung Fu Palm
+---------------------------------------------------------
+type,ChangeState
+value,3000
+triggerall,command = TripleKFPalm
+triggerall,power >= 1000
+trigger1,statetype = S
+trigger1,ctrl
+trigger2,statetype != A
+trigger2,hitdefattr = SC, NA, SA, HA
+trigger2,stateno != [3000,3050)
+trigger2,movecontact
+---------------------------------------------------------
+State -1, Combo condition Reset
+---------------------------------------------------------
+type,VarSet
+trigger1,1
+var(1),0
+---------------------------------------------------------
+State -1, Combo condition Check
+---------------------------------------------------------
+type,VarSet
+trigger1,statetype != A
+trigger1,ctrl
+trigger2,(stateno = [200,299]) || (stateno = [400,499])
+trigger2,stateno != 440 
+trigger2,movecontact
+var(1),1
+---------------------------------------------------------
+State -1, Fast Kung Fu Knee
+---------------------------------------------------------
+type,ChangeState
+value,1070
+triggerall,command = FF_ab
+triggerall,power >= 330
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Light Kung Fu Knee
+---------------------------------------------------------
+type,ChangeState
+value,1050
+triggerall,command = FF_a
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Strong Kung Fu Knee
+---------------------------------------------------------
+type,ChangeState
+value,1060
+triggerall,command = FF_b
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Fast Kung Fu Palm
+---------------------------------------------------------
+type,ChangeState
+value,1020
+triggerall,command = QCF_xy
+triggerall,power >= 330
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Light Kung Fu Palm
+---------------------------------------------------------
+type,ChangeState
+value,1000
+triggerall,command = QCF_x
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Strong Kung Fu Palm
+---------------------------------------------------------
+type,ChangeState
+value,1010
+triggerall,command = QCF_y
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Fast Kung Fu Upper
+---------------------------------------------------------
+type,ChangeState
+value,1120
+triggerall,command = upper_xy
+triggerall,power >= 330
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Light Kung Fu Upper
+---------------------------------------------------------
+type,ChangeState
+value,1100
+triggerall,command = upper_x
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Strong Kung Fu Upper
+---------------------------------------------------------
+type,ChangeState
+value,1110
+triggerall,command = upper_y
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Fast Kung Fu Blow
+---------------------------------------------------------
+type,ChangeState
+value,1220
+triggerall,command = QCB_xy
+triggerall,power >= 330
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Light Kung Fu Blow
+---------------------------------------------------------
+type,ChangeState
+value,1200
+triggerall,command = QCB_x
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Strong Kung Fu Blow
+---------------------------------------------------------
+type,ChangeState
+value,1210
+triggerall,command = QCB_y
+trigger1,var(1) 
+---------------------------------------------------------
+State -1, Run Fwd
+---------------------------------------------------------
+type,ChangeState
+value,100
+trigger1,command = FF
+trigger1,statetype = S
+trigger1,ctrl
+---------------------------------------------------------
+State -1, Run Back
+---------------------------------------------------------
+type,ChangeState
+value,105
+trigger1,command = BB
+trigger1,statetype = S
+trigger1,ctrl
+---------------------------------------------------------
+State -1, Kung Fu Throw
+---------------------------------------------------------
+type,ChangeState
+value,800
+triggerall,command = y
+triggerall,statetype = S
+triggerall,ctrl
+triggerall,stateno != 100
+trigger1,command = holdfwd
+trigger1,p2bodydist X < 3
+trigger1,(p2statetype = S) || (p2statetype = C)
+trigger1,p2movetype != H
+trigger2,command = holdback
+trigger2,p2bodydist X < 5
+trigger2,(p2statetype = S) || (p2statetype = C)
+trigger2,p2movetype != H
+---------------------------------------------------------
+State -1, Stand Light Punch
+---------------------------------------------------------
+type,ChangeState
+value,200
+triggerall,command = x
+triggerall,command != holddown
+trigger1,statetype = S
+trigger1,ctrl
+trigger2,stateno = 200
+trigger2,time > 6
+---------------------------------------------------------
+State -1, Stand Strong Punch
+---------------------------------------------------------
+type,ChangeState
+value,210
+triggerall,command = y
+triggerall,command != holddown
+trigger1,statetype = S
+trigger1,ctrl
+trigger2,(stateno = 200) && time > 5
+trigger3,(stateno = 230) && time > 6
+---------------------------------------------------------
+State -1, Stand Light Kick
+---------------------------------------------------------
+type,ChangeState
+value,230
+triggerall,command = a
+triggerall,command != holddown
+trigger1,statetype = S
+trigger1,ctrl
+trigger2,(stateno = 200) && time > 7
+trigger3,(stateno = 230) && time > 9
+---------------------------------------------------------
+State -1, Standing Strong Kick
+---------------------------------------------------------
+type,ChangeState
+value,240
+triggerall,command = b
+triggerall,command != holddown
+trigger1,statetype = S
+trigger1,ctrl
+trigger2,(stateno = 200) && time > 5
+trigger3,(stateno = 230) && time > 6
+---------------------------------------------------------
+State -1, Taunt
+---------------------------------------------------------
+type,ChangeState
+value,195
+triggerall,command = start
+trigger1,statetype != A
+trigger1,ctrl
+---------------------------------------------------------
+State -1, Crouching Light Punch
+---------------------------------------------------------
+type,ChangeState
+value,400
+triggerall,command = x
+triggerall,command = holddown
+trigger1,statetype = C
+trigger1,ctrl
+---------------------------------------------------------
+State -1, Crouching Strong Punch
+---------------------------------------------------------
+type,ChangeState
+value,410
+triggerall,command = y
+triggerall,command = holddown
+trigger1,statetype = C
+trigger1,ctrl
+trigger2,(stateno = 400) || (stateno = 430)
+trigger2,(time > 9) || (movecontact && time > 5)
+---------------------------------------------------------
+State -1, Crouching Light Kick
+---------------------------------------------------------
+type,ChangeState
+value,430
+triggerall,command = a
+triggerall,command = holddown
+trigger1,statetype = C
+trigger1,ctrl
+trigger2,(stateno = 400) || (stateno = 430)
+trigger2,(time > 9) || (movecontact && time > 5)
+---------------------------------------------------------
+State -1, Crouching Strong Kick
+---------------------------------------------------------
+type,ChangeState
+value,440
+triggerall,command = b
+triggerall,command = holddown
+trigger1,statetype = C
+trigger1,ctrl
+trigger2,(stateno = 400) || (stateno = 430)
+trigger2,(time > 9) || (movecontact && time > 5)
+---------------------------------------------------------
+State -1, Jump Light Punch
+---------------------------------------------------------
+type,ChangeState
+value,600
+triggerall,command = x
+trigger1,statetype = A
+trigger1,ctrl
+trigger2,stateno = 600
+trigger2,statetime >= 7
+---------------------------------------------------------
+State -1, Jump Strong Punch
+---------------------------------------------------------
+type,ChangeState
+value,610
+triggerall,command = y
+trigger1,statetype = A
+trigger1,ctrl
+trigger2,stateno = 600 || stateno = 630 
+trigger2,movecontact
+---------------------------------------------------------
+State -1, Jump Light Kick
+---------------------------------------------------------
+type,ChangeState
+value,630
+triggerall,command = a
+trigger1,statetype = A
+trigger1,ctrl
+---------------------------------------------------------
+State -1, Jump Strong Kick
+---------------------------------------------------------
+type,ChangeState
+value,640
+triggerall,command = b
+trigger1,statetype = A
+trigger1,ctrl
+trigger2,stateno = 600 || stateno = 630 
+trigger2,movecontact
+---------------------------------------------------------
+

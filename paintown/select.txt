@@ -1,0 +1,74 @@
+(select-screen
+  (name "paintown-select")
+  ;; Uncomment the background token and put it in whatever png file you want
+  ;; to change the select screen background
+  ;; (background paintown-title.png)
+  ; Use a menu animation (This will override the background if it is set)
+  (animation
+    (depth background bottom)
+    (image 0 "menu/paintown.png")
+    (velocity -.001 0)
+    (frame
+      (image 0)
+      (time -1)))
+  
+  ; Grid type
+  ; - simple-list
+  ; - grid-list
+  (grid-list 
+    (grid-size 4 5)
+    (layout "infinite-vertical")
+    (cell-dimensions 60 60)
+    (cell-spacing 0 0)
+    (cell-margins 20 20)
+    (start-offset 0 40)
+    (cursors 1)
+    (wrap true))
+  ; Directory in which to populate from
+
+  (cell (name back) (shape square) (color 0 0 0) (color-fill true))
+  (cell (name top) (shape square) (color 200 200 200) (color-fill false) (thickness 2))
+  (cell (name select0) (shape square)
+    (gradient (low 128 0 0) (high 255 0 0) (size 30))
+    (color-fill false) (thickness 2))
+  (cell (name select1) (shape square) (color 0 0 255) (color-fill false) (thickness 2))
+  (cell (name select-alternative) (shape square) (color 0 255 0) (color-fill false) (thickness 3))
+
+  ; Up
+  (more "low" (location 405 15) (dimensions 100 8) (direction up) (depth foreground bottom) (gradient (low 128 128 128) (high 255 255 0) (distance 20)))
+  ; Down
+  (more "high" (location 405 440) (dimensions 100 10) (direction down) (depth foreground bottom) (gradient (low 128 128 128) (high 255 255 0) (distance 20)))
+
+  (sound movement sounds/beep1.wav)
+
+  (auto-populate-directory "players")
+  ; Window coordinates where list will be
+  ; x y width height
+  (list-window 300 0 340 480)
+  ; Profile window is where the character avatar or animation can be drawn make one per cursor
+  (profile (window 0 50 300 480) (facing right) (scale 2) (depth background bottom))
+   
+  ; Font
+  ; (font somefont.ttf 32 32)
+  ; Font dimensions
+  (font-dimensions 35 35)
+
+  (messages
+    (name select)
+    (text
+      (message "%s")
+      (name select)
+      (location 10 15)
+      (color 255 255 255)
+      (depth foreground top)
+      (font-dimensions 35 35)
+      (justification right))
+     (text
+      (message "%s")
+      (location 10 50)
+      (color 255 255 255)
+      (depth foreground top)
+      (font-dimensions 35 35)
+      (justification right)
+      (cursor-association 0)))
+)

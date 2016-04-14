@@ -1,0 +1,880 @@
+; China
+; Chun Li Stage
+; Super Street Fighter 2 - The New Challengers
+; from CPS2
+; by VIB
+; www.vibhp.cjb.net
+
+;--------------------------------------------------------
+[Info]
+name = "SSF2 - China"
+
+;--------------------------------------------------------
+[Camera]
+startx = 0
+starty = 0
+boundleft = -197
+boundright = 196
+boundhigh = -20
+boundlow = 0
+verticalfollow = .2
+floortension = 50
+tension = 50
+
+
+;--------------------------------------------------------
+[PlayerInfo]
+;--- Player 1 ---
+p1startx = -70          ;Starting x coordinates
+p1starty = 0            ;Starting y coordinates
+p1startz = 0            ;Starting z coordinates
+p1facing = 1            ;Direction player faces: 1=right, -1=left
+
+;--- Player 2 ---
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+;--- Common ---
+leftbound  = -1000 ;Left bound (x-movement)
+rightbound =  1000 ;Right bound
+topbound  =  0     ;Top bound (z-movement)
+botbound  =  0     ;Bottom bound
+
+;--------------------------------------------------------
+[Scaling]
+topz     = 0       ;Top z-coordinate for scaling
+botz     = 50      ;Bottom z-coordinate for scaling
+topscale = 1       ;Scale to use at top
+botscale = 1.2     ;Scale to use at bottom
+
+;--------------------------------------------------------
+[Bound]
+screenleft = 10
+screenright = 10
+
+;--------------------------------------------------------
+[StageInfo]
+zoffset = 217
+
+autoturn = 1
+resetBG = 0
+
+;--------------------------------------------------------
+[Shadow]
+color = 72,72,72
+yscale = -.18
+reflect = 0
+
+;--------------------------------------------------------
+[Music]
+bgmusic = stages/ssf2-China.mp3
+
+bgvolume = 0
+
+;========================================================
+;--------------------------------------------------------
+; Background definition
+;-------------------------------------
+; [BG x]
+; type = ?       "Normal"/"Parallax"/"Height"  (def: "normal")
+; spriteno = ?, ? Sprite group and number: groupno, imgno  (req'd)
+; start = ?, ?   Starting location (integer)  (def: 0, 0)
+; delta = ?, ?   Change in location per camera unit moved (float)  (def: 1,1)
+; trans = ?      Transparency settings: "none"/"add"/"sub"/"avg" (def: "none")
+; mask = ?       Masking (int): 0 - off, 1 - on  (def: 0)
+; velocity = ?, ? Velocity: x, y (float): speed background moves (def: 0, 0)
+; tile = ?, ?    Tiling: xtile, ytile (int): 0 - off, 1 - infinite,
+;                        >1 - tile that number of times  (def: 0, 0)
+; tilespacing = ?, ? Tiling: x, y (int) : space between tiles (def: 0, 0)
+;  Parallax-only:
+; xscale = ?, ?    Top xscale, bottom xscale (float) (if used, then no tiling)
+; width = ?, ?     Top width, bottom width (int)  (if used, then tiles;
+;                             use either this or above, but not both)
+; yscalestart = ?  Starting y-scale (float, in percent)  (def: 100)
+; yscaledelta = ?  Change in y-scale per unit (float, in percent)  (def: 0)
+;-------------------------------------
+
+;-------------------------------------
+; Main background definition
+[BGdef]
+spr = stages/ssf2-China.sff
+debugbg = 0
+
+;----------
+[BG ceu]
+type  = normal
+spriteno = 1, 0
+start = -74, -10
+delta = .2,.2
+tile = 1,0
+mask  = 0
+
+[BG ceu baixo]
+type  = normal
+spriteno = 1, 1
+start = -74, 54
+delta = .2,.2
+tile = 1,0
+mask  = 0
+
+[BG ceu +baixo]
+type  = normal
+spriteno = 1, 2
+start = 0, 69
+delta = .2,.2
+tile = 1,0
+mask  = 0
+
+[BG casinha de tras]
+type  = normal
+spriteno = 0, 0
+layerno = 0
+start = -6, 153
+delta = .625,.725
+trans = none
+mask  = 1
+tile  = 0, 0
+tilespacing = 0,0
+window = 0,0, 319, 239
+windowdelta = 0,0
+
+[BG casinha da frente]
+type  = normal
+spriteno = 0, 1
+start = 0, 177 ;320-160+1
+delta = .765,1
+mask  = 1
+
+[BG a familia feliz]
+type  = anim
+actionno = 10
+start = -264, 96
+delta = .765,1
+mask  = 0
+
+[BG b frangocida]
+type  = anim
+actionno = 11
+start = -158, 96
+delta = .765,1
+mask  = 0
+
+[BG c frangolino]
+type  = anim
+actionno = 12
+start = -52, 136
+delta = .765,1
+mask  = 0
+
+[BG d ok man]
+type  = anim
+id = 2
+actionno = 13
+start = 66, 86
+delta = .765,1
+mask  = 1
+
+[BG e chuaaa]
+type  = anim
+actionno = 14
+start = 176, 126
+delta = .765,1
+mask  = 1
+
+[BG f giragira]
+type  = anim
+actionno = 15
+start = 279, 58
+delta = .765,1
+mask  = 0
+
+[BG chao]
+type  = parallax
+spriteno = 2, 0
+start = 0, 176
+delta = .765,1
+mask  = 0
+xscale = 1, 1.479
+; x = ((1-d)*B/A+1)/d
+; x = ((1-.765)*23/41+1)/.765
+
+[BG mancha no ch�o]
+type  = normal
+spriteno = 2, 1
+start = 218, 175
+trans = sub
+delta = .765,1
+mask  = 1
+
+[BG pedra esq]
+type  = normal
+spriteno = 2, 2
+layerno = 1
+start = -215, 232
+delta = 1.1,1
+mask  = 1
+
+[BG pedra dir]
+type  = normal
+spriteno = 2, 2
+layerno = 1
+start = 190, 232
+delta = 1.1,1
+mask  = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; BICICLETAS
+
+;============================= sequencia 0
+; esquerda pra direita
+
+;;;;---- bike 0
+[BG bicicleta azul]
+type  = anim
+actionno = 20
+id = 20
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra1]
+type  = anim
+actionno = 23
+id = 20
+positionlink = 1
+start = 0, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta verde]
+type  = anim
+actionno = 21
+id = 20
+positionlink = 1
+start = -2000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra2]
+type  = anim
+actionno = 23
+id = 20
+positionlink = 1
+start = -2000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta vermelha]
+type  = anim
+actionno = 22
+id = 20
+positionlink = 1
+start = -4000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra3]
+type  = anim
+actionno = 23
+id = 20
+positionlink = 1
+start = -4000, 0
+delta = .8,1
+mask  = 1
+
+;;;;---- rostos 0
+[BG rosto0.0]
+type  = normal
+spriteno = 30, 0
+id = 30
+start = -6, -69
+delta = .8,1
+mask  = 1
+
+[BG rosto0.1]
+type  = normal
+spriteno = 30, 1
+id = 30
+positionlink = 1
+start = -2000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto0.2]
+type  = normal
+spriteno = 30, 2
+id = 30
+positionlink = 1
+start = -4000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto0.3]
+type  = normal
+spriteno = 30, 3
+id = 30
+positionlink = 1
+start = -6000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto0.4]
+type  = normal
+spriteno = 30, 4
+id = 30
+positionlink = 1
+start = -8000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto0.5]
+type  = normal
+spriteno = 30, 5
+id = 30
+positionlink = 1
+start = -10000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto0.6]
+type  = normal
+spriteno = 30, 6
+id = 30
+positionlink = 1
+start = -12000, 0
+delta = .8,1
+mask  = 1
+
+;============================= sequencia 1
+; direita pra esquerda
+
+;;;;---- bike 1
+[BG bicicleta vermelha]
+type  = anim
+actionno = 27
+id = 21
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra1]
+type  = anim
+actionno = 28
+id = 21
+positionlink = 1
+start = 0, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta verde]
+type  = anim
+actionno = 26
+id = 21
+positionlink = 1
+start = 3000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra2]
+type  = anim
+actionno = 28
+id = 21
+positionlink = 1
+start = 3000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta azul]
+type  = anim
+actionno = 25
+id = 21
+positionlink = 1
+start = 6000, 0
+delta = .8,1
+mask  = 1
+
+[BG bicicleta sombra3]
+type  = anim
+actionno = 28
+id = 21
+positionlink = 1
+start = 6000, 0
+delta = .8,1
+mask  = 1
+
+;;;;---- rostos 1
+[BG rosto1.0]
+type  = anim
+actionno = 33
+id = 31
+start = 6, -69
+delta = .8,1
+mask  = 1
+
+[BG rosto1.1]
+type  = anim
+actionno = 32
+id = 31
+positionlink = 1
+start = 3000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto1.2]
+type  = anim
+actionno = 35
+id = 31
+positionlink = 1
+start = 6000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto1.3]
+type  = anim
+actionno = 30
+id = 31
+positionlink = 1
+start = 9000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto1.4]
+type  = anim
+actionno = 36
+id = 31
+positionlink = 1
+start = 12000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto1.5]
+type  = anim
+actionno = 34
+id = 31
+positionlink = 1
+start = 15000, 0
+delta = .8,1
+mask  = 1
+
+[BG rosto1.6]
+type  = anim
+actionno = 31
+id = 31
+positionlink = 1
+start = 18000, 0
+delta = .8,1
+mask  = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; controles
+;;;;;;;;;;;;;;;;;;;;;; seq 0
+;----------- bicicleta 0 .. da esquerda
+[BGCtrlDef bk1]
+eventID = 20
+looptime = 1
+ctrlID = 20
+
+[BGCtrl bk1]
+type = VelSet
+time = 0
+x = 2
+
+[BGCtrl bk1]
+type = PosSet
+time = 0,0,-1
+x = -400
+y = 190 ;186
+
+[BGCtrl bk1]
+type = PosAdd
+time = 3000,3000,3002
+x = -6000
+
+;----------- rostos 0 .. da esquerda
+[BGCtrlDef r1]
+eventID = 30
+looptime = 7000
+ctrlID = 30
+
+[BGCtrl bk1]
+type = VelSet
+time = 0
+x = 2
+
+[BGCtrl bk1]
+type = PosSet
+time = 0
+x = -400
+y = 190
+
+;----------- bicicleta 1 .. da direita
+[BGCtrlDef bk1]
+eventID = 21
+looptime = 1
+ctrlID = 21
+
+[BGCtrl bk1]
+type = VelSet
+time = 0
+x = -2
+
+[BGCtrl bk1]
+type = PosSet
+time = 0,0,-1
+x = 1000
+y = 190
+
+[BGCtrl bk1]
+type = PosAdd
+time = 4500,4500,4502
+x = 9000
+
+;;;;;;;;;;;;;;;;;;;;;; seq 1
+;----------- rostos 1 .. da direita
+[BGCtrlDef r1]
+eventID = 31
+looptime = 10500
+ctrlID = 31
+
+[BGCtrl bk1]
+type = VelSet
+time = 0
+x = -2
+
+[BGCtrl bk1]
+type = PosSet
+time = 0
+x = 1000
+y = 190
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; anims
+;----------------------- bicicletas da esquerda
+[Begin Action 20]
+20,0, 0,0, 6
+20,1, 0,0, 6
+20,2, 0,0, 6
+20,3, 0,0, 6
+20,4, 0,0, 6
+20,5, 0,0, 6
+
+[Begin Action 21]
+21,0, 0,0, 6
+21,1, 0,0, 6
+21,2, 0,0, 6
+21,3, 0,0, 6
+21,4, 0,0, 6
+21,5, 0,0, 6
+
+[Begin Action 22]
+22,0, 0,0, 6
+22,1, 0,0, 6
+22,2, 0,0, 6
+22,3, 0,0, 6
+22,4, 0,0, 6
+22,5, 0,0, 6
+
+[Begin Action 23]
+23,0, 0,0, 6,,s
+23,1, 0,0, 6,,s
+23,2, 0,0, 6,,s
+23,3, 0,0, 6,,s
+23,4, 0,0, 6,,s
+23,5, 0,0, 6,,s
+
+;----------------------- bicicletas da direita
+[Begin Action 25]
+20,0, 0,0, 6,h
+20,1, 0,0, 6,h
+20,2, 0,0, 6,h
+20,3, 0,0, 6,h
+20,4, 0,0, 6,h
+20,5, 0,0, 6,h
+
+[Begin Action 26]
+21,0, 0,0, 6,h
+21,1, 0,0, 6,h
+21,2, 0,0, 6,h
+21,3, 0,0, 6,h
+21,4, 0,0, 6,h
+21,5, 0,0, 6,h
+
+[Begin Action 27]
+22,0, 0,0, 6,h
+22,1, 0,0, 6,h
+22,2, 0,0, 6,h
+22,3, 0,0, 6,h
+22,4, 0,0, 6,h
+22,5, 0,0, 6,h
+
+[Begin Action 28]
+23,0, 0,0, 6,h,s
+23,1, 0,0, 6,h,s
+23,2, 0,0, 6,h,s
+23,3, 0,0, 6,h,s
+23,4, 0,0, 6,h,s
+23,5, 0,0, 6,h,s
+
+;----------------------- rostos da direita
+[Begin Action 30]
+30,0, 0,0, -1,h
+
+[Begin Action 31]
+30,1, 0,0, -1,h
+
+[Begin Action 32]
+30,2, 0,0, -1,h
+
+[Begin Action 33]
+30,3, 0,0, -1,h
+
+[Begin Action 34]
+30,4, 0,0, -1,h
+
+[Begin Action 35]
+30,5, 0,0, -1,h
+
+[Begin Action 36]
+30,6, 0,0, -1,h
+
+;----------------------- figurantes
+[Begin Action 10]
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 6
+-1,0, 0,0, 6
+10,1, 0,0, 6
+10,2, 0,0, 6
+10,1, 0,0, 7
+-1,0, 0,0, 7
+10,1, 0,0, 7
+10,2, 0,0, 7
+10,1, 0,0, 7
+-1,0, 0,0, 7
+10,1, 0,0, 7
+10,2, 0,0, 7
+10,1, 0,0, 7
+-1,0, 0,0, 8
+10,1, 0,0, 8
+10,2, 0,0, 8
+10,1, 0,0, 8
+-1,0, 0,0, 8
+10,1, 0,0, 8
+10,2, 0,0, 8
+10,1, 0,0, 8
+-1,0, 0,0, 120
+10,1, 0,0, 5
+10,2, 0,0, 5
+10,1, 0,0, 5
+
+[Begin Action 11]
+-1,0, 0,0, 70
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 7
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+-1,0, 0,0, 20
+11,1, 0,0, 7
+11,2, 0,0, 7
+11,1, 0,0, 7
+
+[Begin Action 12]
+-1,0, 0,0, 22
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 81
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+-1,0, 0,0, 5
+12,1, 0,0, 5
+12,2, 0,0, 5
+12,1, 0,0, 5
+
+[Begin Action 13]
+13,0, 0,0, 60
+13,1, 0,0, 6
+13,2, 0,0, 15
+13,1, 0,0, 10
+13,0, 0,0, 182
+13,1, 0,0, 5
+13,2, 0,0, 12
+13,1, 0,0, 8
+
+[Begin Action 14]
+-1,0, 0,0, 8
+14,1, 0,0, 8
+
+[Begin Action 15]
+-1,0, 0,0, 5
+15,1, 0,0, 5
+15,2, 0,0, 5
+
+
+
+
+
+
+
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

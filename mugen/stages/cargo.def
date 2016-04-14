@@ -1,0 +1,191 @@
+[Info]
+name = "Below deck"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -232
+boundright = 232
+boundhigh = -70
+boundlow = 0
+verticalfollow = .2
+tension = 50
+
+[PlayerInfo]
+p1startx = -70
+p1starty = 0
+p1startz = 0
+p1facing = 1
+
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+leftbound  = -1000
+rightbound =  1000
+topbound  =  0
+botbound  =  0
+
+[Scaling]
+topz     = 0
+botz     = 50
+topscale = 1
+botscale = 1.2
+
+[Bound]
+screenleft = 15
+screenright = 15
+
+[StageInfo]
+zoffset = 0;220
+zoffsetlink = 30
+autoturn = 1
+resetBG = 1
+
+[Shadow]
+color = 128,128,128
+yscale = .3
+
+[Music]
+bgmusic =
+bgvolume = 0
+
+[BGdef]
+spr = stages/cargo.sff
+
+[BG horizon A]
+type = normal
+spriteno = 0,0
+start = -225,105
+delta = .9,.8
+
+[BG horizon B]
+type = normal
+spriteno = 0,1
+start = 70,105
+delta = .9,.8
+
+[BG boat]
+type = normal
+spriteno = 1,0
+start = 0,249
+delta = 1,1
+mask = 1
+sin.y = -10, 280
+
+[BG Dummy]
+type  = dummy
+id = 30
+start = 0,-28
+positionlink = 1
+
+[BG cloth A]
+type = anim
+actionno = 1
+start = -307,-136
+delta = 1,1
+positionlink = 1
+
+[BG cloth B]
+type = anim
+actionno = 2
+start = -123,-172
+delta = 1,1
+positionlink = 1
+
+[BG cloth C]
+type = anim
+actionno = 4
+start = 226,-169
+delta = 1,1
+positionlink = 1
+
+[BG lantern]
+type = anim
+actionno = 3
+start = -95,-271
+delta = 1,1
+positionlink = 1
+
+[BG rat]
+type = anim
+actionno = 5
+start = -60,-53
+delta = 1,1
+positionlink = 1
+
+[BG barrels A]
+type = normal
+spriteno = 7,0
+layerno = 1
+start = -392,0
+delta = 1,1
+mask = 1
+positionlink = 1
+
+[BG barrels A]
+type = normal
+spriteno = 7,1
+layerno = 1
+start = 392,0
+delta = 1,1
+mask = 1
+positionlink = 1
+
+[Begin action 1]
+
+2,0, 0,0, 16
+2,1, 0,0, 16
+2,2, 0,0, 16
+2,3, 0,0, 16
+
+[Begin action 2]
+
+3,0, 0,0, 16
+3,1, 0,0, 16
+3,2, 0,0, 16
+3,1, 0,0, 16
+
+[Begin action 3]
+
+4,0, 0,0, 16
+4,1, 0,0, 16
+4,2, 0,0, 16
+4,3, 0,0, 16
+4,4, 0,0, 16
+4,3, 0,0, 16
+4,2, 0,0, 16
+4,1, 0,0, 16
+
+[Begin action 4]
+
+5,0, 0,0, 16
+5,1, 0,0, 16
+5,2, 0,0, 16
+5,1, 0,0, 16
+
+[Begin action 5]
+
+6, 0, 0,0, 1505
+6, 1, 0,0, 4
+6, 2, 0,0, 4
+6, 3, 0,0, 4
+6, 4, 0,0, 4
+6, 3, 0,0, 4
+6, 4, 0,0, 60
+6, 5, 0,0, 4
+6, 6, 0,0, 4
+6, 7, 0,0, 4
+6, 8, 0,0, 60
+6, 9, 0,0, 4
+6,10, 0,0, 4
+6,11, 0,0, 4
+6, 6, 0,0, 4
+6, 7, 0,0, 4
+6, 8, 0,0, 4
+6, 9, 0,0, 4
+6,10, 0,0, 4
+6,12, 0,0, 4
+6,13, 0,0, 4
+6,14, 0,0, 4

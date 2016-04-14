@@ -1,0 +1,4 @@
+(item
+ (name cake)
+ (sound sounds/get.wav)
+ (frame misc/cake/cake.png))

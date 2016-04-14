@@ -1,0 +1,182 @@
+[Info]
+name = "Love in Venice"
+
+[Camera]
+startx = 0
+starty = 0
+boundleft = -224
+boundright = 224
+boundhigh = 0
+boundlow = 0
+verticalfollow = .5
+tension = 50
+
+[PlayerInfo]
+p1startx = -70
+p1starty = 0
+p1startz = 0
+p1facing = 1
+
+p2startx = 70
+p2starty = 0
+p2startz = 0
+p2facing = -1
+
+leftbound  = -1000
+rightbound =  1000
+topbound  =  0
+botbound  =  0
+
+[Scaling]
+topz = 0
+botz = 50
+topscale = 1
+botscale = 1.2
+
+[Bound]
+screenleft = 15
+screenright = 15
+
+[StageInfo]
+zoffset = 215
+autoturn = 1
+resetBG = 1
+
+[Shadow]
+color = 128,128,128
+yscale = .1
+
+[Music]
+bgmusic = 
+bgvolume = 0
+
+[BGdef]
+spr = stages/venice.sff
+
+[BG 0]
+type = normal
+spriteno = 0,0
+start = 0,240
+delta = .528,1
+
+[BG 1]
+type = anim
+actionno = 1
+start = 0,240
+delta = .528,1
+
+[BG 2]
+type = anim
+actionno = 2
+start = 0,240
+delta = .528,1
+
+[BG 3.0]
+type = normal
+spriteno = 3,0
+start = -278,240
+delta = .528
+mask = 1
+
+[BG 3.1]
+type = normal
+spriteno = 3,1
+start = 278,240
+delta = .528
+mask = 1
+
+[BG 4]
+type = normal
+spriteno = 4,0
+start = 256,149
+delta = .528,1
+velocity = -.2,0
+sin.y = 3,512
+mask = 1
+
+[BG 5]
+type = anim
+actionno = 5
+start = 256,149
+delta = .528,1
+velocity = -.2,0
+
+[BG 6]
+type = normal
+spriteno = 6,0
+start = -336,240
+delta = .9,1
+sin.x = 1,256
+sin.y = 1,768
+mask = 1
+
+[BG 7]
+type = normal
+spriteno = 7,0
+start = -336,240
+delta = .9,1
+sin.x = 1,384
+sin.y = 1,256
+mask = 1
+
+[BG 8]
+type = normal
+spriteno = 8,0
+start = -336,240
+delta = .9,1
+sin.x = 1,512
+sin.y = 1,512
+mask = 1
+
+[BG 9]
+type = normal
+spriteno = 9,0
+start = 0,240
+delta = .9,1
+mask = 1
+
+[BG 10]
+type = parallax
+spriteno = 10,0
+start = 0,209
+delta = .9,1
+xscale = .9,1.27
+
+[Begin action 1]
+
+1,0, 0,0, 3
+1,1, 0,0, 3
+1,2, 0,0, 3
+1,3, 0,0, 3
+1,4, 0,0, 3
+1,5, 0,0, 3
+1,6, 0,0, 3
+1,7, 0,0, 3
+1,8, 0,0, 3
+
+[Begin action 2]
+
+2, 0, 0,0, 3
+2, 1, 0,0, 3
+2, 2, 0,0, 3
+2, 3, 0,0, 3
+2, 4, 0,0, 3
+2, 5, 0,0, 3
+2, 6, 0,0, 3
+2, 7, 0,0, 3
+2, 8, 0,0, 3
+2, 9, 0,0, 3
+2,10, 0,0, 3
+2,11, 0,0, 3
+2,12, 0,0, 3
+2,13, 0,0, 3
+2,14, 0,0, 3
+2,15, 0,0, 3
+2,16, 0,0, 3
+2,17, 0,0, 3
+
+[Begin action 5]
+
+5,0, 0,0, 8
+5,1, 0,0, 8
+5,2, 0,0, 8

@@ -1,0 +1,14 @@
+(backgrounds
+  (background
+    (path bgs/versus/bg1.png)
+    (z 420))
+  (background
+    (path bgs/versus/bg2.png)
+    (z 400))
+  (background
+    (path bgs/versus/bg3.png)
+    (z 420))
+  (background
+    (path bgs/versus/bg4.png)
+    (z 430))
+  )

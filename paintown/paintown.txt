@@ -1,0 +1,38 @@
+(game
+  (name Paintown)
+  (menu menu/main.txt)
+  (level-set
+    (name "Paintown")
+    ;; (player-path "whatever")
+    (levels
+      paintown/levels/1.txt
+      paintown/levels/2.txt
+      paintown/levels/3.txt
+      paintown/levels/4.txt
+      paintown/levels/5.txt
+      paintown/levels/6.txt
+      paintown/levels/7.txt
+      paintown/levels/8.txt
+      paintown/levels/9.txt
+      paintown/levels/10.txt
+      paintown/levels/11.txt
+      ))
+  ;; Just an example of adding a new level set
+  ;@
+  (level-set
+    (name "Paintown2")
+    ;; (player-path "whatever")
+    (levels
+      paintown/levels/1.txt
+      paintown/levels/2.txt
+      paintown/levels/3.txt
+      paintown/levels/4.txt
+      paintown/levels/5.txt
+      paintown/levels/6.txt
+      paintown/levels/7.txt
+      paintown/levels/8.txt
+      paintown/levels/9.txt
+      paintown/levels/10.txt
+      paintown/levels/11.txt
+      ))
+  )

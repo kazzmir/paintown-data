@@ -1,0 +1,33 @@
+(projectile
+  (anim
+    (name main)
+    (type attack)
+    (basedir players/ryu/haddoken/)
+    (delay 4)
+    (offset 0 -16)
+    (attack
+      (x1 20)
+      (y1 0)
+      (x2 70)
+      (y2 30)
+      (damage 20))
+    (frame super-fireball01.png)
+    (frame super-fireball02.png)
+    (frame super-fireball03.png)
+    (frame super-fireball04.png)
+    (frame super-fireball05.png)
+    (frame super-fireball06.png)
+    (frame super-fireball07.png)
+    (frame super-fireball08.png))
+
+  (anim
+    (name death)
+    (basedir players/ryu/haddoken/)
+    (delay 5)
+    (frame super-fireball-death01.png)
+    (frame super-fireball-death02.png)
+    (frame super-fireball-death03.png)
+    (frame super-fireball-death04.png)
+    (frame super-fireball-death05.png)
+    (frame super-fireball-death06.png))
+  )

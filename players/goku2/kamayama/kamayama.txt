@@ -1,0 +1,19 @@
+
+(projectile 
+  (anim 
+    (name "main") 
+    (basedir ./players/goku2/kamayama/) 
+    (delay 10) 
+    (attack 
+      (x1 0) 
+      (y1 0) 
+      (x2 55) 
+      (y2 30) 
+      (force 0) 
+      (damage 8)) 
+    (frame shot.png)) 
+  (anim 
+    (name "death") 
+    (basedir ./players/goku2/kamayama/) 
+    (delay 1) 
+    (frame shot.png)))

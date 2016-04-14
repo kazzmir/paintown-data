@@ -1,0 +1,28 @@
+(projectile
+  (anim
+    (name main)
+    (type attack)
+    (basedir players/ryu/haddoken/)
+    (delay 5)
+    (attack
+      (x1 20)
+      (y1 15)
+      (x2 80)
+      (y2 50)
+      (damage 8))
+    (frame ryu-fireball01.png)
+    (frame ryu-fireball02.png)
+    (frame ryu-fireball03.png)
+    (frame ryu-fireball04.png))
+
+  (anim
+    (name death)
+    (basedir players/ryu/haddoken/)
+    (delay 5)
+    (frame ryu-fbdeath01.png)
+    (frame ryu-fbdeath02.png)
+    (frame ryu-fbdeath03.png)
+    (frame ryu-fbdeath04.png)
+    (frame ryu-fbdeath05.png)
+    (frame ryu-fbdeath06.png))
+  )

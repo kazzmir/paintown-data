@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="3">
+  <name>Paintown</name>
+  <coder>kazzmir, juvinious</coder>
+  <version>3.6.1</version>
+  <release_date>201110160000</release_date>
+  <short_description>A 2-D Fighting Game</short_description> 
+  <long_description>If you are looking for a side-scrolling, action packed game like you used to play or if you are looking for an extensible engine to write your own game, look no further. Paintown supports user created content through a mod system and user defined functionality through scripting.
+
+Paintown also supports an implementation of M.U.G.E.N. Our goal is to be 100% compatible with M.U.G.E.N 2002.04.14 beta as well as supporting any new updates in the 1.0 version.
+
+Paintown is completely open-source and we would love any contributions in the form of code, art, or donations. Give Paintown a try!
+
+Features
+Low CPU and GPU requirements
+Network play
+Dynamic lighting
+Joystick support
+mod/s3m/xm/it music modules
+Scripting with python
+M.U.G.E.N engine
+  </long_description> 
+</app>
